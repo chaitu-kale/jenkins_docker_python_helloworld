@@ -2,12 +2,14 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE = 'csk1234/hello-world-python:1.0'
-        DOCKERHUB_CREDENTIALS = 'my_dockerhub_credentials_id'  // Credential ID you created in Jenkins
+        DOCKERHUB_CREDENTIALS = 'my_dockerhub_credentials_id'
     }
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/chaitu-kale/jenkins_docker_python_helloworld.git'
+                git branch: 'main',
+                    credentialsId: 'your_git_credential_id', // Add your Git credentials ID here
+                    url: 'https://github.com/chaitu-kale/jenkins_docker_python_helloworld.git'
             }
         }
         stage('Docker Build') {
