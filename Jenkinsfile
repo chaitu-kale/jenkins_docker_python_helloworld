@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE = 'csk1234/hello-world-python:1.0'
-        DOCKERHUB_CREDENTIALS = 'my_dockerhub_credentials_id'
+        DOCKERHUB_CREDENTIALS = 'my_docker_hub_credentials_id'
     }
     stages {
         stage('Checkout') {
